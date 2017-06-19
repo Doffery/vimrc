@@ -17,6 +17,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'valloric/youcompleteme'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'lervag/vimtex'
+Plugin 'scrooloose/syntastic'
+Plugin 'majutsushi/tagbar'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -44,8 +47,11 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+" ignore the file with .o extension in NerdTree
+let NERDTreeIgnore = ['\.o$']
 set number
-set expandtab
+" set expandtab
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
@@ -54,11 +60,19 @@ syntax on
 
 set hlsearch
 
-map gs :YcmCompleter GoTo
-map gd :YcmCompleter GoTo<cr>
+map gs		:YcmCompleter GoTo
+map gd		:YcmCompleter GoTo<cr>
+map <F7>	:NERDTree<cr>
+map <F8>	:TagbarToggle<cr>
 
 syntax enable
 set background=dark
 colorscheme desert
 
-set cc=76
+set cc=80
+
+" Record last editing position of this file
+autocmd BufReadPost *
+            \ if line("'\"")>0&&line("'\"")<=line("$") |
+            \   exe "normal g'\"" |
+            \ endif
