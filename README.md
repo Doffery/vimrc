@@ -4,21 +4,21 @@ Manage the Plugins with Vundle. For programmers and CS reseachers.
 ##1. set up Vundle
 
 ```
-_git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim_
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
 ##2. copy vimrc
 
 ```
-_git clone https://github.com/Doffery/vimrc.git_
+git clone https://github.com/Doffery/vimrc.git
 
-_cp ./vimrc/.vimrc ~_
+cp ./vimrc/.vimrc ~
 ```
 
 ##3. install plugins
 
 ```
-_vim +PluginInstall +qall_
+vim +PluginInstall +qall
 ```
 
 ##4. set up YouCompleteMe
@@ -27,23 +27,23 @@ install CMAKE
 
 ubuntu
 ```
-_apt-get install cmake_
+apt-get install cmake
 ```
 or mac
 ```
-_brew install cmake_
+brew install cmake
 ```
 
 Compile with C family support
 ```
-_cd ~/.vim/bundle/youcompleteme/_
+cd ~/.vim/bundle/youcompleteme/
 
-_./install.py --clang-completer_
+./install.py --clang-completer
 
 ```
 or support all langu
 ```
-_./install.py --all_
+./install.py --all
 ```
 
 ##5. cool plugins resources
